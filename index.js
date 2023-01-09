@@ -3,7 +3,7 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia;
 const favicon = document.createElement("link");
 let videoScale = 13;
 let video;
-const stepSize = 8;
+const stepSize = 10;
 
 function setup() {
   favicon.rel = "shortcut icon";
@@ -11,14 +11,14 @@ function setup() {
   favicon.href = "../../images/favicon.ico";
   document.getElementsByTagName("head")[0].appendChild(favicon);
 
-  createCanvas(400, 300);
+  createCanvas(700, 500);
   noStroke();
   fill(0);
   rectMode(CORNER);
   ellipseMode(CORNER);
 
   video = createCapture(VIDEO);
-  video.size(400, 300);
+  video.size(700, 500);
   video.hide();
 
   navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
